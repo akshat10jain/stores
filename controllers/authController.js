@@ -14,7 +14,7 @@ exports.login = passport.authenticate('local', {
 
 exports.logout = (req, res) => {
   req.logout();
-  req.flash('success', 'You are now logged out! 👋');
+  req.flash('success', 'You are now logged out! ');
   res.redirect('/');
 };
 
@@ -91,6 +91,6 @@ exports.update = async (req, res) => {
   user.resetPasswordExpires = undefined;
   const updatedUser = await user.save();
   await req.login(updatedUser);
-  req.flash('success', '💃 Nice! Your password has been reset! You are now logged in!');
+  req.flash('success', ' Nice! Your password has been reset! You are now logged in!');
   res.redirect('/');
 };
